@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Add Accent",
+  "version": "1.0",
+  "permissions": [
+    "scripting",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "add-accent": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+A"
+      },
+      "description": "Добавить ударение"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+"host_permissions": [
+  "<all_urls>"
+]
+}
